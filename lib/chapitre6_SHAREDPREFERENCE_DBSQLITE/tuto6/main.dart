@@ -1,5 +1,7 @@
+import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/view_model/theme_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 import './views/new_post.dart';
 import './views/post_list.dart';
@@ -25,8 +27,11 @@ final _router = GoRouter(
     ]
 );
 
-void main() => runApp(const MyApp());
-
+void main() => runApp(ChangeNotifierProvider<ThemeViewModel>(
+  create: (context) => ThemeViewModel(),
+  child: const MyApp(),
+  )
+);
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

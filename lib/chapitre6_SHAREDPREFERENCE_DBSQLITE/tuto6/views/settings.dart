@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import '../widgets/nav_bar.dart';
 
 class Settings extends StatelessWidget {
   const Settings({super.key});
@@ -7,24 +7,7 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Settings'),
-        backgroundColor: Colors.blue,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              context.go('/new_post');
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.color_lens),
-            onPressed: () {
-              context.go('/settings');
-            },
-          ),
-        ],
-      ),
+      appBar: navBar(context, 'Settings'),
       body: const Center(
         child: Text('Settings'),
       ),
