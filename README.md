@@ -40,4 +40,20 @@
 - **Justification: Adds a divider between list items, used in `ListView.separated` for visual separation.**  
   Divider - [https://api.flutter.dev/flutter/widgets/Divider-class.html](https://api.flutter.dev/flutter/widgets/Divider-class.html)
 
+### Chapter 4: Navigation and State Management
+- **Justition: Provides a reactive way to access and rebuild UI based on changes in a `ChangeNotifier`, used in `ListScreen` to access `ArticleViewModel` for displaying and filtering articles.**  
+  Consumer - [https://pub.dev/documentation/provider/latest/provider/Consumer-class.html](https://pub.dev/documentation/provider/latest/provider/Consumer-class.html)
+- **Justification: A state management package that provides dependency injection and reactive updates, used to manage `ArticleViewModel` in `ListScreen` for handling article data and state.**  
+  provider - [https://pub.dev/packages/provider](https://pub.dev/packages/provider)
+- **Justification: A routing package for declarative navigation, used in `ListScreen` to navigate to the article creation screen (`/create-article`) and article details screen (`/articles/:id`).**  
+  go_router - [https://pub.dev/packages/go_router](https://pub.dev/packages/go_router)
+- **Justification: Provides a material design structure for the app, used in `ListScreen` to create the main layout with an `AppBar`, `FloatingActionButton`, and body content.**  
+  Scaffold - [https://api.flutter.dev/flutter/material/Scaffold-class.html](https://api.flutter.dev/flutter/material/Scaffold-class.html)
+- **Justification: Creates a floating action button, used in `ListScreen` to trigger navigation to the article creation screen.**  
+  FloatingActionButton - [https://api.flutter.dev/flutter/material/FloatingActionButton-class.html](https://api.flutter.dev/flutter/material/FloatingActionButton-class.html)
+- **Justification: Displays an icon button, used in `ListScreen` for toggling read status and deleting articles.**  
+  IconButton - [https://api.flutter.dev/flutter/material/IconButton-class.html](https://api.flutter.dev/flutter/material/IconButton-class.html)
+- **Justification: Displays a dynamic list with separators, used in `ListScreen` to show a list of articles with dividers between them.**  
+  ListView.separated - [https://api.flutter.dev/flutter/widgets/ListView/ListView.separated.html](https://api.flutter.dev/flutter/widgets/ListView/ListView.separated.html)
+
 ### ALL dependences if needed it 

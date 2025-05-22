@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:note_flutter/chapitre1_sttales_wigdet/laureat_widget.dart';
+
+
+import 'laureat_widget.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,7 @@
+import 'package:ex4/chapitre2_statefull_widget_and_list/property.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:note_flutter/chapitre2_statefull_widget_and_list/property.dart';
+
 
 class PropertyWidget extends StatelessWidget {
   final Property property;
