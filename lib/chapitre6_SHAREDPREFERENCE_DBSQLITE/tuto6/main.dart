@@ -1,4 +1,5 @@
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/services/post_services.dart';
+import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/view_model/post_view_model.dart';
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/view_model/theme_view_model.dart';
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/views/new_post.dart';
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/views/post_list.dart';
@@ -13,8 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final databaseProvider = PostService();
   await databaseProvider.initDatabase();
-  print(await databaseProvider.getPosts());
-  runApp(const MyApp());
+  runApp(MyApp(postService: databaseProvider));
 }
 
 final _router = GoRouter(
@@ -38,18 +38,25 @@ final _router = GoRouter(
 );
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final PostService postService;
+
+  const MyApp({super.key, required this.postService});
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ThemeViewModel>(
-      create: (context) => ThemeViewModel(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<PostViewModel>(
+          create: (context) => PostViewModel(postService),
+        ),
+        ChangeNotifierProvider<ThemeViewModel>(
+          create: (context) => ThemeViewModel(),
+        ),
+      ],
       child: MaterialApp.router(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(),
         routerConfig: _router,
       ),
     );
