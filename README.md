@@ -57,3 +57,15 @@
   ListView.separated - [https://api.flutter.dev/flutter/widgets/ListView/ListView.separated.html](https://api.flutter.dev/flutter/widgets/ListView/ListView.separated.html)
 
 ### ALL dependences if needed it 
+
+
+
+### Installation de sqlite pour Flutter
+Nous allons installer le package sqlflite et son alternative web, sqflite_common_ffi_web:
+
+flutter pub add sqflite
+flutter pub add path
+flutter pub add sqflite_common_ffi_web
+Il faut ensuite tourner une petite ligne de commande (dans le terminal, dans le répertoire de votre application):
+
+dart run sqflite_common_ffi_web:setup
