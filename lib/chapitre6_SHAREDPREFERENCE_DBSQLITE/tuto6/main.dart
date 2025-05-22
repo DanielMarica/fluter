@@ -2,6 +2,7 @@ import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/services/post_serv
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/view_model/post_view_model.dart';
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/view_model/theme_view_model.dart';
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/views/new_post.dart';
+import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/views/post_details.dart';
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/views/post_list.dart';
 import 'package:ex4/chapitre6_SHAREDPREFERENCE_DBSQLITE/tuto6/views/settings.dart';
 import 'package:flutter/foundation.dart';
@@ -31,6 +32,12 @@ final _router = GoRouter(
         GoRoute(
           path: 'settings',
           builder: (context, state) => const Settings(),
+        ),
+        GoRoute(
+          path: 'posts/:id',
+          builder: (context, state) => PostDetails(
+            postId: state.pathParameters['id'] ?? '',
+          ),
         ),
       ],
     ),
